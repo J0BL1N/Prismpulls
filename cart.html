@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PokéShop - Home</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="scripts.js"></script>
+  <head>
+    <meta charset="UTF-8" />
+    <title>PokéShop - Home</title>
+    <!-- Favicon link -->
+    <link rel="icon" href="images\logo.png" type="image/png" />
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">
+      <a href="index.html">PokéShop</a>
+    </div>
+    <nav class="nav-links">
+      <a href="index.html" class="nav-item">Home</a>
+      <a href="shop.html" class="nav-item">Shop</a>
+      <a href="about.html" class="nav-item">About</a>
+      <a href="contact.html" class="nav-item">Contact</a>
+      <a href="login.html" class="nav-item">Login</a>
+      <a href="wishlist.html" class="nav-item">Wishlist</a>
+      <a href="cart.html" class="nav-item cart-link">Cart (0)</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <main class="cart-section">
+      <h2>Your Cart</h2>
+      <div id="cart-items">
+        <p>Your cart is currently empty.</p>
+      </div>
+      <div class="cart-summary">
+        <p><strong>Subtotal:</strong> <span id="cart-subtotal">$0.00</span></p>
+        <p><strong>Tax:</strong> <span id="cart-tax">$0.00</span></p>
+        <p><strong>Total:</strong> <span id="cart-total">$0.00</span></p>
+        <button id="checkout-btn" class="checkout-btn">Proceed to Checkout</button>
+      </div>
+    </main>
+
+    <section class="shipping-calculator">
+      <h3>Estimate Shipping</h3>
+      <label>Enter ZIP Code:</label>
+      <input type="text" placeholder="ZIP Code" />
+      <button>Calculate</button>
+    </section>
+
+    <section class="discount-code">
+      <h3>Apply Discount Code</h3>
+      <input type="text" placeholder="Discount Code" id="discount-code-input" />
+      <button id="discount-apply-btn">Apply</button>
+    </section>
+
+    <section class="add-ons">
+      <h3>Suggested Add-Ons</h3>
+      <div class="addon-grid">
+        <!-- Product 1: Black Flame Booster Box -->
+        <div class="product-card" 
+             data-category="black-flame" 
+             data-stock="1" 
+             data-product-id="booster-pack-01">
+          <img src="images\blackflameboosterbox01.png" alt="Black Flame Booster Box" />
+          <h3>Black Flame Booster Box</h3>
+          <p class="price">$60</p>
+          <p class="market-value">Market Value: $65 (approx.)</p>
+          <p class="stock-count"></p>
+          <button class="add-to-cart">Add to Cart</button>
+        </div>
+
+                         <!-- Product 4: paradisedragonaboosterbox01 -->
+                         <div class="product-card" 
+                         data-category="paradise-dragona" 
+                         data-stock="3" 
+                         data-product-id="151boosterbox01">
+                      <img src="images\paradisedragonaboosterbox01.png" alt="Paradise Dragona Booster Box" />
+                      <h3>Paradise Dragona Booster Box</h3>
+                      <p class="price">$60</p>
+                      <p class="market-value">Market Value: $90 (approx.)</p>
+                      <p class="stock-count"></p>
+                      <button class="wishlist-btn">Add to Wishlist</button>
+                      <button class="add-to-cart">Add to Cart</button>
+                    </div>
+    </section>
+
+    <section class="order-summary">
+      <h3>Order Summary</h3>
+      <p>Items: $XX.XX</p>
+      <p>Shipping: $XX.XX</p>
+      <p><strong>Total: $XX.XX</strong></p>
+    </section>
+
+    <section class="secure-checkout">
+      <img src="https://via.placeholder.com/150x50" alt="Secure Checkout">
+      <p>100% Secure Payment Guaranteed</p>
+    </section>
+
+    <section class="checkout-section" id="checkout-section" style="display: none;">
+      <h2>Checkout</h2>
+      <div id="final-order-summary"></div>
+      <p>Thank you for your purchase! Your order has been processed.</p>
+    </section>
+  </div>
+
+  <footer class="footer">
+    <p>&copy; 2025 PokéShop. All rights reserved.</p>
+  </footer>
+</body>
+</html>

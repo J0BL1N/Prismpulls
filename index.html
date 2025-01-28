@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PokéShop - Home</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="scripts.js"></script>
+  <head>
+    <meta charset="UTF-8" />
+    <title>PokéShop - Home</title>
+    <!-- Favicon link -->
+    <link rel="icon" href="images\logo.png" type="image/png" />
+</head>
+<body>
+  <!-- NAV -->
+  <header class="navbar">
+    <div class="logo">
+      <a href="index.html">PokéShop</a>
+    </div>
+    <nav class="nav-links">
+      <a href="index.html" class="nav-item">Home</a>
+      <a href="shop.html" class="nav-item">Shop</a>
+      <a href="about.html" class="nav-item">About</a>
+      <a href="contact.html" class="nav-item">Contact</a>
+      <a href="login.html" class="nav-item">Login</a>
+      <a href="cart.html" class="nav-item cart-link">Cart (0)</a>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Welcome to the Ultimate Pokémon Store!</h1>
+      <p class="hero-subheading">Discover rare cards, packs, and exclusive deals.</p>
+      <a href="shop.html" class="cta-btn hero-cta-btn">Shop Now</a>
+    </div>
+  </section>
+
+  <!-- Container for home content -->
+  <div class="container">
+    <section class="home-content">
+      <h2>Featured Products</h2>
+      <div class="featured-grid">
+        <!-- Featured Item #1 -->
+        <div class="product-card" 
+             data-category="151-sv2a" 
+             data-stock="3" 
+             data-product-id="151boosterpack01">
+          <img src="images\151boosterpack001.png" alt="151 SV2a Booster Pack" />
+          <h3>Pokémon Elite Box (Terastal Festival)</h3>
+          <p class="price">$8</p>
+          <p class="market-value">Market Value: $12 (approx.)</p>
+          <p class="stock-count"></p>
+          <button class="add-to-cart">Add to Cart</button>
+        </div>
+      
+        <!-- Featured Item #2 -->
+                    <!-- Product 4: paradisedragonaboosterpack01 -->
+                    <div class="product-card" 
+                    data-category="paradise-dragona" 
+                    data-stock="3" 
+                    data-product-id="paradisedragonaboosterpack01">
+                 <img src="images\paradisedragonaboosterpack01.png" alt="Paradise Dragona Booster Pack" />
+                 <h3>Paradise Dragona Booster Box</h3>
+                 <p class="price">$4</p>
+                 <p class="market-value">Market Value: $6 (approx.)</p>
+                 <p class="stock-count"></p>
+                 <button class="add-to-cart">Add to Cart</button>
+               </div>
+      
+        <!-- Featured Item #3 -->
+                    <!-- Product 4: superelectricbreakerpack01 -->
+                    <div class="product-card" 
+                    data-category="super-electric-breaker" 
+                    data-stock="3" 
+                    data-product-id="superelectricbreakerpack01">
+                 <img src="images\superelectricbreakerpack01.png" alt="Super Electric Breaker Booster Pack" />
+                 <h3>Super Electric Breaker Booster Pack</h3>
+                 <p class="price">$8</p>
+                 <p class="market-value">Market Value: $12 (approx.)</p>
+                 <p class="stock-count"></p>
+                 <button class="add-to-cart">Add to Cart</button>
+               </div>
+      </div>
+      
+    </section>
+
+    <section class="special-offers">
+      <h2>Special Offers</h2>
+      <p>Enjoy Buy 2, Get 1 Free on all Booster Packs! Limited time only.</p>
+    </section>
+
+    <section class="testimonials">
+      <h2>What Our Customers Are Saying</h2>
+      <div class="testimonial">
+        <p>"Best Pokémon store ever! Amazing selection and quick shipping." - Alex G.</p>
+      </div>
+      <div class="testimonial">
+        <p>"I found the rare card I was looking for. Highly recommended!" - Taylor R.</p>
+      </div>
+    </section>
+
+    <section class="news-updates">
+      <h2>Latest Updates</h2>
+      <ul>
+        <li>New Booster Packs arriving February 2025!</li>
+        <li>Join our online tournament - Registration closes January 31st.</li>
+      </ul>
+    </section>
+  </div>
+
+  <section class="newsletter-signup">
+    <h2>Stay Updated!</h2>
+    <p>Sign up for our newsletter to receive exclusive offers and the latest news on new sets!</p>
+    <form class="newsletter-form">
+      <input type="email" placeholder="Enter your email" required />
+      <button type="submit" class="newsletter-btn">Subscribe</button>
+    </form>
+  </section>  
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>&copy; 2025 PokéShop. All rights reserved.</p>
+  </footer>
+</body>
+</html>

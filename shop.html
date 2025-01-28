@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PokéShop - Home</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="scripts.js"></script>
+  <head>
+    <meta charset="UTF-8" />
+    <title>PokéShop - Home</title>
+    <!-- Favicon link -->
+    <link rel="icon" href="images\logo.png" type="image/png" />
+</head>
+<body>
+  <!-- NAV -->
+  <header class="navbar">
+    <div class="logo">
+      <a href="index.html">PokéShop</a>
+    </div>
+    <nav class="nav-links">
+      <a href="index.html" class="nav-item">Home</a>
+      <a href="shop.html" class="nav-item">Shop</a>
+      <a href="about.html" class="nav-item">About</a>
+      <a href="contact.html" class="nav-item">Contact</a>
+      <a href="login.html" class="nav-item">Login</a>
+      <a href="cart.html" class="nav-item cart-link">Cart (0)</a>
+    </nav>
+  </header>
+
+  <div class="shop-container">
+    <!-- Sidebar: filters, categories, etc. -->
+    <aside class="sidebar">
+      <section class="filters">
+        <h2>Filter Products</h2>
+        <label>
+          Price Range:
+          <input type="range" min="1" max="100" />
+        </label>
+        <select>
+          <option value="popularity">Sort by Popularity</option>
+          <option value="newest">Sort by Newest</option>
+          <option value="price-low">Sort by Price: Low to High</option>
+          <option value="price-high">Sort by Price: High to Low</option>
+        </select>
+      </section>
+
+      <nav class="categories">
+        <h2>Card Games</h2>
+        <ul>
+          <li>
+            <a href="#" class="game-category-filter" data-game="pokemon">Pokémon</a>
+            <ul class="sub-category-list">
+              <li><a href="#" class="set-filter" data-category="all" data-game="pokemon">All Pokémon Sets</a></li>
+              <li><a href="#" class="set-filter" data-category="black-flame" data-game="pokemon">Black Flame</a></li>
+              <li><a href="#" class="set-filter" data-category="paradise-dragona" data-game="pokemon">Paradise Dragona</a></li>
+              <li><a href="#" class="set-filter" data-category="super-electric-breaker" data-game="pokemon">Super Electric Breaker</a></li>
+              <li><a href="#" class="set-filter" data-category="terastal-festival" data-game="pokemon">Terastal Festival</a></li>
+              <li><a href="#" class="set-filter" data-category="151-sv2a" data-game="pokemon">151 SV2a</a></li>
+              <li><a href="#" class="set-filter" data-category="stellar-miracle" data-game="pokemon">Stellar Miracle</a></li>
+              <li><a href="#" class="set-filter" data-category="pokemon-singles" data-game="pokemon">Singles</a></li>
+              <li><a href="#" class="set-filter" data-category="pokemon-slabs" data-game="pokemon">Slabs</a></li>
+              <li><a href="#" class="set-filter" data-category="pokemon-merch" data-game="pokemon">Merch</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#" class="game-category-filter" data-game="yugioh">Yu-Gi-Oh</a>
+            <ul class="sub-category-list">
+              <li><a href="#" class="set-filter" data-category="yugioh-sets" data-game="yugioh">All Yu-Gi-Oh Sets</a></li>
+              <li><a href="#" class="set-filter" data-category="yugioh-singles" data-game="yugioh">Singles</a></li>
+              <li><a href="#" class="set-filter" data-category="yugioh-slabs" data-game="yugioh">Slabs</a></li>
+              <li><a href="#" class="set-filter" data-category="yugioh-merch" data-game="yugioh">Merch</a></li>
+            </ul>
+          </li>
+          <!-- Repeat for Magic, One Piece, Dragonball, Weiss Schwarz -->
+        </ul>
+      </nav>
+    </aside>
+
+    <main class="products-section">
+      <h2>All Pokémon Products</h2>
+
+      <div class="product-grid">
+        <!-- Product 1: Black Flame Booster Box -->
+        <div class="product-card" 
+             data-category="black-flame" 
+             data-stock="1" 
+             data-product-id="booster-pack-01">
+          <img src="images\blackflameboosterbox01.png" alt="Black Flame Booster Box" />
+          <h3>Black Flame Booster Box</h3>
+          <p class="price">$60</p>
+          <p class="market-value">Market Value: $65 (approx.)</p>
+          <p class="stock-count"></p>
+          <button class="add-to-cart">Add to Cart</button>
+        </div>
+
+        <!-- Product 2: Black Flame Booster Pack -->
+        <div class="product-card" 
+             data-category="black-flame" 
+             data-stock="1" 
+             data-product-id="blackflameboosterpack01">
+          <img src="images\blackflameboosterpack01.png" alt="Black Flame Booster Pack" />
+          <h3>Black Flame Booster Pack</h3>
+          <p class="price">$2.50</p>
+          <p class="market-value">Market Value: $3 (approx.)</p>
+          <p class="stock-count"></p>
+          <button class="add-to-cart">Add to Cart</button>
+        </div>
+
+        <!-- Product 3: 151boosterbox01 -->
+        <div class="product-card" 
+             data-category="151-sv2a" 
+             data-stock="10" 
+             data-product-id="151boosterbox01">
+          <img src="images\151boosterbox01.png" alt="151 SV2a Booster Box" />
+          <h3>151 SV2a Booster Box</h3>
+          <p class="price">$120</p>
+          <p class="market-value">Market Value: $150 (approx.)</p>
+          <p class="stock-count"></p>
+          <button class="add-to-cart">Add to Cart</button>
+        </div>
+        
+        <!-- Product 4: 151boosterpack001 -->
+        <div class="product-card" 
+             data-category="151-sv2a" 
+             data-stock="3" 
+             data-product-id="151boosterpack01">
+          <img src="images\151boosterpack001.png" alt="151 SV2a Booster Pack" />
+          <h3>Pokémon Elite Box (Terastal Festival)</h3>
+          <p class="price">$8</p>
+          <p class="market-value">Market Value: $12 (approx.)</p>
+          <p class="stock-count"></p>
+          <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <!-- Add more product cards as needed -->
+                 <!-- Product 4: paradisedragonaboosterbox01 -->
+        <div class="product-card" 
+        data-category="paradise-dragona" 
+        data-stock="3" 
+        data-product-id="151boosterbox01">
+     <img src="images\paradisedragonaboosterbox01.png" alt="Paradise Dragona Booster Box" />
+     <h3>Paradise Dragona Booster Box</h3>
+     <p class="price">$60</p>
+     <p class="market-value">Market Value: $90 (approx.)</p>
+     <p class="stock-count"></p>
+     <button class="add-to-cart">Add to Cart</button>
+   </div>
+
+                    <!-- Product 4: paradisedragonaboosterpack01 -->
+                    <div class="product-card" 
+                    data-category="paradise-dragona" 
+                    data-stock="3" 
+                    data-product-id="paradisedragonaboosterpack01">
+                 <img src="images\paradisedragonaboosterpack01.png" alt="Paradise Dragona Booster Pack" />
+                 <h3>Paradise Dragona Booster Box</h3>
+                 <p class="price">$4</p>
+                 <p class="market-value">Market Value: $6 (approx.)</p>
+                 <p class="stock-count"></p>
+                 <button class="add-to-cart">Add to Cart</button>
+               </div>
+                                <!-- Product 4: superelectricbreakerbox01 -->
+        <div class="product-card" 
+        data-category="super-electric-breaker" 
+        data-stock="3" 
+        data-product-id="superelectricbreakerbox01">
+     <img src="images\superelectricbreakerbox01.png" alt="Super Electric Breaker Booster Box" />
+     <h3>Super Electric Breaker Booster Box</h3>
+     <p class="price">$90</p>
+     <p class="market-value">Market Value: $110 (approx.)</p>
+     <p class="stock-count"></p>
+     <button class="wishlist-btn">Add to Wishlist</button>
+     <button class="add-to-cart">Add to Cart</button>
+   </div>
+
+                    <!-- Product 4: superelectricbreakerpack01 -->
+                    <div class="product-card" 
+                    data-category="super-electric-breaker" 
+                    data-stock="3" 
+                    data-product-id="superelectricbreakerpack01">
+                 <img src="images\superelectricbreakerpack01.png" alt="Super Electric Breaker Booster Pack" />
+                 <h3>Super Electric Breaker Booster Pack</h3>
+                 <p class="price">$8</p>
+                 <p class="market-value">Market Value: $12 (approx.)</p>
+                 <p class="stock-count"></p>
+                 <button class="add-to-cart">Add to Cart</button>
+               </div>
+
+                                               <!-- Product 4: terastalfestivalboosterbox01 -->
+        <div class="product-card" 
+        data-category="terastal-festival" 
+        data-stock="3" 
+        data-product-id="terastalfestivalboosterbox01">
+     <img src="images\terastalfestivalboosterbox01.png" alt="Terastal Festival Booster Box" />
+     <h3>Terastal Festival Booster Box</h3>
+     <p class="price">$90</p>
+     <p class="market-value">Market Value: $110 (approx.)</p>
+     <p class="stock-count"></p>
+     <button class="add-to-cart">Add to Cart</button>
+   </div>
+
+                    <!-- Product 4: terastalfestivalboosterpack01 -->
+                    <div class="product-card" 
+                    data-category="terastal-festival" 
+                    data-stock="3" 
+                    data-product-id="terastal-festival">
+                 <img src="images\terastalfestivalboosterpack01.png" alt="Terastal Festival Booster Pack" />
+                 <h3>Terastal Festival Booster Pack</h3>
+                 <p class="price">$10</p>
+                 <p class="market-value">Market Value: $14 (approx.)</p>
+                 <p class="stock-count"></p>
+                 <button class="add-to-cart">Add to Cart</button>
+               </div>
+                                                              <!-- Product 4: stellarmiracleboosterbox01 -->
+        <div class="product-card" 
+        data-category="stellar-miracle" 
+        data-stock="3" 
+        data-product-id="stellarmiracleboosterbox01">
+     <img src="images\stellarmiracleboosterbox01.png" alt="Stellar Miracle Booster Box" />
+     <h3>Stellar Miracle Booster Box</h3>
+     <p class="price">$90</p>
+     <p class="market-value">Market Value: $110 (approx.)</p>
+     <p class="stock-count"></p>
+     <button class="add-to-cart">Add to Cart</button>
+   </div>
+
+                    <!-- Product 4: stellarmiracleboosterpack01 -->
+                    <div class="product-card" 
+                    data-category="stellar-miracle" 
+                    data-stock="3" 
+                    data-product-id="stellar-miracle">
+                 <img src="images\stellarmiracleboosterpack01.png" alt="Stellar Miracle Booster Pack" />
+                 <h3>Stellar Miracle Booster Pack</h3>
+                 <p class="price">$10</p>
+                 <p class="market-value">Market Value: $14 (approx.)</p>
+                 <p class="stock-count"></p>
+                 <button class="add-to-cart">Add to Cart</button>
+               </div>
+
+                       <!-- ~~~~~~~~~~~ Yu-Gi-Oh Cards ~~~~~~~~~~~ -->
+        <!-- Example: 25th Anniversary rarity Collection Booster Box? -->
+        <div class="product-card"
+        data-category="yugioh-sets"
+        data-stock="0"
+        data-product-id="anniversaryraritybox01"
+        data-game="yugioh">
+     <img src="images\25th anniversaryraritycollectionboosterbox.png"
+          alt="29th Anniversary rarity Collection Booster Box" />
+     <h3>25th Anniversary rarity Collection Box</h3>
+     <p class="price">$80</p>
+     <p class="market-value">Market Value: $95 (approx.)</p>
+     <p class="stock-count"></p>
+     <button class="add-to-cart">Add to Cart</button>
+   </div>
+   
+   <!-- Example: Age of Overlord Booster Box -->
+   <div class="product-card"
+        data-category="yugioh-sets"
+        data-stock="0"
+        data-product-id="ageofoverlordboosterbox01"
+        data-game="yugioh">
+     <img src="images\ageofoverlordboosterbox01.png"
+          alt="Yu-Gi-Oh Age of Overlord Booster Box" />
+     <h3>Age of Overlord Booster Box</h3>
+     <p class="price">$70</p>
+     <p class="market-value">Market Value: $85 (approx.)</p>
+     <p class="stock-count"></p>
+     <button class="add-to-cart">Add to Cart</button>
+   </div>
+
+   <!-- Example: Battle of Legend: Chapter 1 Box -->
+   <div class="product-card"
+        data-category="yugioh-sets"
+        data-stock="0"
+        data-product-id="battleoflegendchapter1box01"
+        data-game="yugioh">
+     <img src="images\battlesoflegendschapter1box01.png"
+          alt="Battle of Legends: Chapter 1 Box" />
+     <h3>Battle of Legends: Chapter 1</h3>
+     <p class="price">$45</p>
+     <p class="market-value">Market Value: $55 (approx.)</p>
+     <p class="stock-count"></p>
+     <button class="add-to-cart">Add to Cart</button>
+   </div>
+
+   <!-- Example: Phantom Gifting Master Box (1st Edition) -->
+   <div class="product-card"
+        data-category="yugioh-sets"
+        data-stock="0"
+        data-product-id="Phantomnightmareboosterbox[1st Edition]"
+        data-game="yugioh">
+     <img src="images\Phantomnightmareboosterbox[1st Edition].png"
+          alt="Phantom nightmare booster box" />
+     <h3>Phantom Nightmare Booster Box (1st Edition)</h3>
+     <p class="price">$95</p>
+     <p class="market-value">Market Value: $110 (approx.)</p>
+     <p class="stock-count"></p>
+     <button class="add-to-cart">Add to Cart</button>
+   </div>
+      </div>
+
+    </main>
+  </div>
+
+  <footer class="footer">
+    <p>&copy; 2025 PokéShop. All rights reserved.</p>
+  </footer>
+</body>
+</html>

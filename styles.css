@@ -1,0 +1,703 @@
+/************************************
+  0. FONT IMPORT
+************************************/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap');
+
+/* Use a modern font for categories, sub-categories. */
+.categories ul li a {
+  font-family: 'Roboto Slab', serif;
+  font-weight: 400;
+}
+
+/************************************
+  1. GLOBAL LAYOUT & RESET
+************************************/
+/* Make header/footer fixed, so main content can scroll between them */
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow-x: hidden; /* so we don't horizontally scroll if ads are pinned off screen */
+  /* We won't do display:flex here because we want the main content to scroll if needed. */
+  font-family: 'Poppins', sans-serif; 
+  background: url("images/background.jpg") no-repeat center center fixed; 
+  background-size: cover;  
+  color: #333;
+}
+
+/************************************
+  2. FIXED HEADER & FOOTER
+************************************/
+.navbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1e90ff;
+  padding: 0 1rem;
+  z-index: 800;
+}
+
+.logo a {
+  font-size: 2.2rem;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  line-height: 80px;
+}
+
+.nav-links .nav-item {
+  margin-left: 1.5rem;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1.2rem; 
+  font-weight: 500;
+  line-height: 80px;
+}
+
+.nav-links .nav-item:hover {
+  text-decoration: underline;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  height: 50px;
+  background-color: #1e90ff;
+  color: #ffffff;
+  text-align: center;
+  font-size: 1.4rem;
+  padding: 0.05rem 0;
+  z-index: 1000;
+}
+
+/************************************
+  3. MAIN CONTENT WRAPPERS
+************************************/
+/* Provide space for the fixed header (80px) and footer (60px) */
+.container,
+.shop-container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 1rem;
+  padding-top: 80px;  /* leaves space under header */
+  padding-bottom: 80px; /* leaves space above footer */
+  box-sizing: border-box;
+}
+
+/* If you want the shop container specifically to do something else,
+   you can override, but this ensures there's space for the header/footer. */
+
+/************************************
+  4. HOME PAGE STYLES
+************************************/
+.hero {
+  width: 100%;
+  background-color: #ff5555;
+  color: #fff;
+  text-align: center;
+  padding: 1.5rem 1rem;
+  margin-top: 80px; /* if you prefer the hero to start below fixed header */
+}
+
+.hero-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 1rem;
+}
+
+.hero-content h1 {
+  margin-bottom: 1rem;
+}
+
+.hero-subheading {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.hero-cta-btn {
+  margin-top: 1rem;
+  background-color: #fff;
+  color: #ff0000;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.hero-cta-btn:hover {
+  background-color: #f0f0f0;
+}
+
+.home-content {
+  margin-bottom: 2rem;
+}
+
+.featured-grid {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+  justify-content: center;
+}
+
+.featured-grid div {
+  text-align: center;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 1rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.featured-grid div img {
+  display: block;
+  margin: 0 auto;
+  width: 450px;
+  height: 450px;
+  object-fit: contain;
+  transition: transform 0.2s ease;
+}
+.featured-grid div img:hover {
+  transform: scale(2);
+}
+.featured-grid div button {
+  background-color: #1e90ff;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  margin: 0.25rem;
+}
+.featured-grid div button:hover {
+  background-color: #ff0000;
+}
+
+/* Example backgrounds for special offers, testimonials, etc. */
+.special-offers {
+  text-align: center;
+  background-color: #ffe4e1;
+  padding: 1.5rem 1rem;
+  margin: 1.5rem 0;
+}
+
+.special-offers h2 {
+  color: #ff0000;
+  margin-bottom: 0.5rem;
+}
+
+.testimonials {
+  padding: 2rem 0;
+  background-color: #f0f8ff;
+}
+
+.testimonials h2 {
+  margin-bottom: 1rem;
+  color: #1e90ff;
+}
+
+.testimonial {
+  margin: 1rem 0;
+  font-style: italic;
+}
+
+.news-updates h2 {
+  color: #1e90ff;
+  margin-bottom: 1rem;
+}
+
+.news-updates ul {
+  list-style: none;
+  margin-left: 1rem;
+}
+
+.newsletter-signup {
+  text-align: center;
+  background-color: #fefefe;
+  padding: 1rem;
+  margin-top: 2rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.newsletter-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.newsletter-form input {
+  padding: 0.5rem;
+  font-size: 1rem;
+  width: 70%;
+  max-width: 300px;
+  margin-bottom: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.newsletter-btn {
+  background-color: #1e90ff;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.newsletter-btn:hover {
+  background-color: #ff0000;
+}
+
+/************************************
+  5. SHOP PAGE
+************************************/
+.shop-container {
+  display: flex;
+  flex: 1;
+  /* We already gave top/bottom padding for header/footer space. */
+  margin-top: 80px;
+  margin-bottom: 60px;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 250px;
+  background-color: #f0f8ff;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-right: 1rem;
+}
+
+.filters, .categories {
+  margin-bottom: 5rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+.filters h2, .categories h2 {
+  margin-bottom: 1rem;
+  color: #1e90ff;
+}
+
+.categories ul {
+  list-style: none;
+}
+
+.categories ul li {
+  margin-bottom: 0.5rem;
+  transition: background 0.2s ease;
+}
+
+.categories ul li a {
+  color: #ff0000;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 400;
+  padding: 0.5rem;
+  display: inline-block;
+  border-radius: 4px;
+}
+
+.categories ul li:hover {
+  background: #f0f0f0;
+}
+
+.categories ul li a:hover {
+  text-decoration: underline;
+}
+
+.sub-category-list {
+  margin-left: 1.5rem;
+  margin-top: 0.5rem;
+  border-left: 2px dashed #ddd;
+  padding-left: 1rem;
+}
+
+/* Products Section */
+.products-section {
+  flex: 1;
+  position: relative;
+  background-color: rgba(255,255,255,0.8);
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+}
+
+.products-section h2 {
+  color: #1e90ff;
+  margin-bottom: 1rem;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns */
+  grid-auto-rows: auto; /* Rows adjust automatically based on content height */
+  gap: 1.5rem; /* Add space between items */
+  margin-top: 1rem;
+}
+
+
+/* Product Card */
+.product-card {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 1.5rem;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.product-card img {
+  display: block;
+  margin: 0 auto; 
+  max-width: 240px; 
+  max-height: 240px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+  transition: transform 0.2s ease;
+}
+
+.product-card img:hover {
+  transform: scale(1.5);
+}
+
+.product-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.product-card .price {
+  font-size: 1.1rem;
+  color: #1e90ff;
+  margin-bottom: 0.25rem;
+}
+
+.market-value {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+.stock-count {
+  font-weight: bold;
+  margin: 0.5rem 0;
+}
+
+/* Buttons in product card */
+.product-card button {
+  background-color: #1e90ff;
+  color: #ffffff;
+  padding: 0.5rem 1rem;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  margin: 0.25rem;
+}
+
+.product-card button:hover {
+  background-color: #ff0000;
+}
+
+/* Out-of-Stock */
+.product-card.out-of-stock {
+  opacity: 0.8;
+  text-decoration: line-through;
+  color: #777;
+}
+.product-card.out-of-stock h3,
+.product-card.out-of-stock .price,
+.product-card.out-of-stock .market-value {
+  text-decoration: line-through;
+  color: #777;
+}
+.product-card.out-of-stock .add-to-cart {
+  background-color: #ccc !important;
+  text-decoration: line-through;
+  cursor: not-allowed;
+  border: 1px dashed #aaa;
+}
+
+/************************************
+  7. ABOUT PAGE
+************************************/
+.about-section {
+  margin-bottom: 2rem;
+}
+
+.about-header-card {
+  background-color: #f9f9f9;
+  padding: 1rem;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  margin-bottom: 1.5rem;
+}
+
+.about-card {
+  background-color: #ffffff;
+  border-left: 4px solid #1e90ff;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.about-card h3 {
+  margin-bottom: 0.5rem;
+}
+
+.team-member {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/************************************
+  8. CONTACT PAGE
+************************************/
+.contact-section {
+  text-align: left;
+  margin-bottom: 2rem;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form label {
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+.contact-form input,
+.contact-form textarea {
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+
+.submit-btn {
+  margin-top: 1.5rem;
+  background-color: #1e90ff;
+  color: #ffffff;
+  padding: 0.75rem 1rem;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.submit-btn:hover {
+  background-color: #ff0000;
+}
+
+.live-chat {
+  text-align: center;
+  margin: 1rem 0;
+}
+
+.live-chat button {
+  background-color: #1e90ff;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+}
+
+.live-chat button:hover {
+  background-color: #ff0000;
+}
+
+.faq, .map, .social-media, .newsletter {
+  text-align: left;
+  margin-bottom: 2rem;
+}
+
+/************************************
+  9. CART PAGE
+************************************/
+.cart-section {
+  background-color: rgba(255,255,255,0.8);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  margin-bottom: 2rem;
+}
+
+.cart-section h2 {
+  color: #1e90ff;
+  margin-bottom: 1rem;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+.remove-item-btn {
+  background-color: #ff0000;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+}
+
+.remove-item-btn:hover {
+  background-color: #c60000;
+}
+
+.cart-summary {
+  text-align: left;
+  margin-top: 1rem;
+}
+
+.checkout-btn {
+  background-color: #1e90ff;
+  color: #ffffff;
+  padding: 0.75rem 1rem;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.checkout-btn:hover {
+  background-color: #ff0000;
+}
+
+.shipping-calculator,
+.discount-code,
+.add-ons,
+.order-summary,
+.secure-checkout {
+  margin-top: 2rem;
+}
+
+.order-summary h3 {
+  color: #1e90ff;
+}
+
+.secure-checkout img {
+  display: block;
+  margin: 1rem auto;
+}
+
+.checkout-section {
+  text-align: center;
+  margin: 2rem 0;
+}
+.add-ons .addon-grid {
+  display: flex;
+  gap: 1rem;
+  /* or justify-content: space-around; align-items: stretch; etc. */
+}
+
+.add-ons .addon-grid .product-card {
+  width: 200px; /* or auto */
+  /* your existing styling */
+}
+
+
+/************************************
+  10. LOGIN
+************************************/
+.login-form {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  margin: 2rem auto;
+}
+
+.login-form label {
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+.login-form input {
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.login-form button {
+  margin-top: 1.5rem;
+  background-color: #1e90ff;
+  color: #fff;
+  padding: 0.75rem 1rem;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.login-form button:hover {
+  background-color: #ff0000;
+}
+
+/************************************
+  11. DISCOUNT VISUAL
+************************************/
+.old-price {
+  text-decoration: line-through;
+  color: #999;
+  margin-right: 0.5rem;
+}
+
+.discounted-price {
+  color: #e60000;
+  font-weight: bold;
+}
+
+/************************************
+  12. RESPONSIVE
+************************************/
+  .logo a,
+  .nav-links .nav-item {
+    line-height: normal;
+  }
+
+  .nav-links {
+    margin-top: 0.5rem;
+  }
+
+  /* If the header is no longer 80px tall, adjust .shop-container top margin. */
+  .shop-container, 
+  .container {
+    padding-top: 120px; /* or auto to handle variable header height */
+  }
+
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cart-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+    grid-auto-rows: auto; /* Auto row height */
+    gap: 1.5rem; /* Space between items */
+    margin-top: 1rem;
+  }
+  
+  @media (max-width: 768px) {
+    .product-grid {
+      grid-template-columns: repeat(3, 1fr); /* Keep 3 columns for small screens */
+    }
+  }
+  
+  .products-section {
+    flex: 1;
+    max-width: 100%; /* Ensure section stretches */
+  }
+  
